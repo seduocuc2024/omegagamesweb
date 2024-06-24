@@ -1,0 +1,39 @@
+.host{
+  display: block;
+  width: 100%;
+  padding: 20px;
+}
+
+.producto-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  grid-gap: 20px;
+
+  .producto{
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15pz;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  h3{
+    margin-top: 0;
+  }
+
+  button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #0056b3;
+    }
+  }
+
+
+
+}

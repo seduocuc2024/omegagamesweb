@@ -11,6 +11,14 @@ import { map, shareReplay } from 'rxjs/operators';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../app.routes';
 
+/**
+ * @description
+ * Componente de barra de navegacion
+ * 
+ * Este componente genera la barra de navegacion la cual esta de forma estatica y es siempre visible
+ */
+
+
 @Component({
   selector: 'app-nav-material',
   templateUrl: './nav-material.component.html',
@@ -27,13 +35,7 @@ import { routes } from '../../app.routes';
   ]
 })
 export default class NavMaterialComponent {
-/*
-  public menuItems = routes
-    .map((route) => route.children ?? [])
-    .flat()
-    .filter((route) => route && route.path)
-    .filter((route) => !route.path?.includes(':'));
-*/
+
 
   private breakpointObserver = inject(BreakpointObserver);
 
