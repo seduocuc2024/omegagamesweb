@@ -1,21 +1,33 @@
-<app-lista-producto></app-lista-producto>
 
-<div style="padding: 20px;">
-  <h1>Carro</h1>
-  @for (item of carroService.getItems(); track item.id) {
-    <div class="carro-item">
-      <h3>{{item.nombre}}</h3>
-      <p>Precio : {{item.precio}}</p>
-      <p>Cantidad : {{item.cantidad}}</p>
-      <div style="display: flex; gap: 10px;">
-        <button (click)="borrarDeCarro(item)">Eliminar</button>
-        <button (click)="carroService.restarCantidad(item.id)">-</button>
-        <button (click)="carroService.sumarCantidad(item.id)">+</button>
+
+
+
+
+
+<div *ngIf="authService.isLoggedIn(); else loginMessage">
+  <app-lista-producto></app-lista-producto>
+
+  <div style="padding: 20px;">
+    
+    <h1>Carro</h1>
+    @for (item of carroService.getItems(); track item.id) {
+      <div class="carro-item">
+        <h3>{{item.nombre}}</h3>
+        <p>Precio : {{item.precio}}</p>
+        <p>Cantidad : {{item.cantidad}}</p>
+        <div style="display: flex; gap: 10px;">
+          <button (click)="borrarDeCarro(item)">Eliminar</button>
+          <button (click)="carroService.restarCantidad(item.id)">-</button>
+          <button (click)="carroService.sumarCantidad(item.id)">+</button>
+        </div>
       </div>
-    </div>
-  }
+      
+      }
+      <div style="padding: 20px;">
+        <h1>Total : {{ carroService.getTotal()}}</h1>
+      </div>
+  </div>
 </div>
-
-<div style="padding: 20px;">
-  <h1>Total : {{ carroService.getTotal()}}</h1>
-</div>
+<ng-template #loginMessage>
+  <p>Por favor, <a routerLink="/login">inicie sesión</a> para usar el carrito de compras.</p>
+</ng-template>

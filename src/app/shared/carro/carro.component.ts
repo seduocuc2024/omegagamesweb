@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ListaProductoComponent } from '../lista-producto/lista-producto.component';
-import { CarroService } from '../../services/carro.service';
+import CarroService from '../../services/carro.service';
+import AuthService from '../../services/auth.service';
 
 /**
  * @description
@@ -18,8 +19,18 @@ import { CarroService } from '../../services/carro.service';
   templateUrl: './carro.component.html',
   styleUrl: './carro.component.css'
 })
-export default class CarroComponent {
-  carroService = inject(CarroService);
+export default class CarroComponent implements OnInit{
+  
+
+  items: any[] = [];
+
+  constructor(public authService: AuthService, public carroService: CarroService) { }
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
+      this.items = this.carroService.getItems();
+    }
+  }
 
   borrarDeCarro(item : any){
     this.carroService.borrarDeCarro(item)

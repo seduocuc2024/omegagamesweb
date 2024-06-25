@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { CarroService } from '../../services/carro.service';
+import CarroService from '../../services/carro.service';
 
 /**
  * @description

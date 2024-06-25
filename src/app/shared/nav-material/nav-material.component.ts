@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../app.routes';
+import AuthService from '../../services/auth.service';
 
 /**
  * @description
@@ -35,6 +36,12 @@ import { routes } from '../../app.routes';
   ]
 })
 export default class NavMaterialComponent {
+
+  constructor(public authService: AuthService) {}
+
+  logout() {
+    this.authService.logout();
+  }
 
 
   private breakpointObserver = inject(BreakpointObserver);

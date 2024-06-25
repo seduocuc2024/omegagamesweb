@@ -17,6 +17,13 @@
       <a mat-list-item routerLink="/familiar">Familiar</a>
       <a mat-list-item routerLink="/ninos">Niños</a>
       <a mat-list-item routerLink="/carrito">Mi Carrito</a>
+      @if (!authService.isLoggedIn()) {
+        <a mat-list-item routerLink="/login">Login</a>
+      }@else {
+        <a mat-list-item (click)="logout()">Logout</a>
+      }
+      
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
