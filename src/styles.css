@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #371977;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidenav-container {
+    height: 100vh;
+  }
+  
+  .sidenav-content {
+    background: #f4f4f4; /* Fondo de la página */
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Asegúrate de que tu barra de navegación también tenga un buen fondo */
+  mat-toolbar {
+    background: linear-gradient(to right, #ff9800, #ff5722);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-toolbar-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  button {
+    font-size: 1em;
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  

@@ -1,0 +1,194 @@
+/* Animaciones */
+@keyframes desvanecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes deslizar {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes resaltar {
+    from {
+        color: black;
+    }
+    to {
+        color: red;
+    }
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+/* Aplicación de las animaciones */
+header {
+    animation: desvanecer 2s ease-in-out;
+}
+
+.juego img {
+    animation: deslizar 1s ease-in-out;
+}
+
+nav ul li a:hover {
+    animation: resaltar 0.5s forwards;
+}
+
+/*section:hover {
+    animation: girar 0.5s forwards;
+}*/
+
+/* Resto del estilo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+nav ul {
+    background-color: #333;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+main {
+    padding: 20px;
+}
+
+.juego {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.juego img {
+    max-width: 200px;
+    height: auto;
+}
+
+.juego div {
+    max-width: 600px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* styles.css */
+.navbar-nav .nav-item .nav-link img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Agregar este estilo al final del archivo */
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+#userDropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#userDropdown .dropdown-menu {
+    right: 0; /* Hace que el menú se alinee a la izquierda del botón */
+    left: auto; /* Hace que el menú se alinee a la izquierda del botón */
+}
+
+/* styles.css o product-page.component.css */
+.custom-btn {
+    background-color: #ff5733; /* Cambia este valor al color deseado */
+    color: rgb(3, 70, 28); /* Cambia el color del texto si es necesario */
+    border: none; /* Elimina el borde predeterminado */
+    padding: 10px 20px; /* Ajusta el espaciado interno */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Elimina la subrayado del texto */
+    display: inline-block; /* Asegura que se comporte como un botón en línea */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    margin: 4px 2px; /* Ajusta el margen alrededor del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 12px; /* Esquinas redondeadas, opcional */
+  }
+  
+
+
+
+
+

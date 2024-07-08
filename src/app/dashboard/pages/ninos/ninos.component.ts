@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import CarroService from '../../../services/carro.service';
 
 @Component({
   selector: 'app-ninos',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './ninos.component.css'
 })
 export default class NinosComponent {
+  @Input() product: any;
 
+  constructor(private carroService: CarroService) {}
+
+  agregarAlCarro(product: any) {
+    this.carroService.agregarAlCarro(product);
+  }
 }
